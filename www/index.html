@@ -1,0 +1,326 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+  <script src="components/loader.js"></script>
+  <script src="lib/onsenui/js/onsenui.min.js"></script>
+
+  <link rel="stylesheet" href="components/loader.css">
+  <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script>
+    // Page init event6
+    document.addEventListener('init', function(event) {
+      var page = event.target;
+
+       //pege1のイベント
+       if (page.matches('#first-page')) {
+         page.querySelector('#push-button-start').onclick = function() {
+           document.querySelector('#navigator').pushPage('page2.html');
+         };
+        }
+
+
+       //page2のイベント
+       if (page.matches('#secound-page')) {
+         page.querySelector('#push-button-a').onclick = function() {
+           document.querySelector('#navigator').pushPage('page3.html');
+         };
+
+         page.querySelector('#push-button-b').onclick = function() {
+           document.querySelector('#navigator').pushPage('page6.html');
+         };
+        }
+       
+       //page3のイベント
+       if (page.matches('#third-page')) {
+         page.querySelector('#push-button-a').onclick = function() {
+           document.querySelector('#navigator').pushPage('page4.html');
+         };
+
+         page.querySelector('#push-button-b').onclick = function() {
+           document.querySelector('#navigator').pushPage('page5.html');
+         };
+        }
+       //page4のイベント
+       if (page.matches('#force-page')) {
+         page.querySelector('#push-button-retry').onclick = function() {
+           document.querySelector('#navigator').pushPage('page1.html');
+         };
+        }
+       //page5のイベント
+       if (page.matches('#fifth-page')) {
+         page.querySelector('#push-button-retry').onclick = function() {
+           document.querySelector('#navigator').pushPage('page1.html');
+         };
+        }
+       //page6のイベント
+       if (page.matches('#sixth-page')) {
+         page.querySelector('#push-button-a').onclick = function() {
+           document.querySelector('#navigator').pushPage('page7.html');
+         };
+
+         page.querySelector('#push-button-b').onclick = function() {
+           document.querySelector('#navigator').pushPage('page8.html');
+         };
+        }
+       //page7のイベント
+       if (page.matches('#seventh-page')) {
+         page.querySelector('#push-button-retry').onclick = function() {
+           document.querySelector('#navigator').pushPage('page1.html');
+         };
+        }
+       //page8のイベント
+       if (page.matches('#eighth-page')) {
+         page.querySelector('#push-button-retry').onclick = function() {
+           document.querySelector('#navigator').pushPage('page1.html');
+         };
+        }
+    });
+
+    if (ons.platform.isIPhoneX()) {
+      document.documentElement.setAttribute('onsflag-iphonex-portrait', '');
+      document.documentElement.setAttribute('onsflag-iphonex-landscape', '');
+    }
+  </script>
+</head>
+<body>
+
+  <ons-navigator id="navigator" page="page1.html"></ons-navigator> 
+
+ <ons-template id="page1.html">
+    <ons-page id="first-page">
+      <ons-toolbar></ons-toolbar>
+
+     <ons-card>
+      <div class="title" style="text-align: center">
+        <br></br>
+        <br></br>
+        <p>独断と偏見による性格診断</p>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <ons-button id="push-button-start">診断を始める</ons-button>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+      </div>
+     </ons-card>
+    </ons-page>
+  </ons-template>
+
+ <ons-template id="page2.html">
+
+  <ons-page id="secound-page">
+     <ons-toolbar>
+        <div class="left">
+          <div class="left"><ons-back-button>戻る</ons-back-button></div>
+         </div>
+       <div class="center">独断と偏見による性格診断</div>
+     </ons-toolbar>
+    
+    <div style="text-align: center">
+     <p>Q.ゲームをするなら？</p><br></br>
+   
+     <p>選択肢A：一人でもくもく</p>
+     <p>選択肢B：みんなでわいわい</p>
+     <br></br>
+   
+     <section style="padding: 5px 0 20px">
+       <ons-button id="push-button-a" modifier="outline" style="margin-right: 20px">選択肢A</ons-button>
+       <ons-button id="push-button-b" modifier="outline" style="margin-left: 20px" >選択肢B</ons-button>
+     </section>
+    </div>    
+    
+    </ons-page>
+   </ons-template>
+
+ <ons-template id="page3.html">
+
+  <ons-page id="third-page">
+     <ons-toolbar>
+        <div class="left">
+          <div class="left"><ons-back-button>戻る</ons-back-button></div>
+         </div>
+       <div class="center">独断と偏見による性格診断</div>
+     </ons-toolbar>
+    
+    <div style="text-align: center">
+     <p>Q.どちらかといえば？</p><br></br>
+   
+     <p>選択肢A：完全ソロプレイ</p>
+     <p>選択肢B：協力あり</p>
+     <br></br>
+   
+     <section style="padding: 5px 0 20px">
+       <ons-button id="push-button-a" modifier="outline" style="margin-right: 20px">選択肢A</ons-button>
+       <ons-button id="push-button-b" modifier="outline" style="margin-left: 20px" >選択肢B</ons-button>
+     </section>
+    </div>    
+    
+    </ons-page>
+   </ons-template>
+
+ <ons-template id="page4.html">
+
+  <ons-page id="force-page">
+     <ons-toolbar>
+        <div class="left">
+          <div class="left"><ons-back-button>戻る</ons-back-button></div>
+         </div>
+       <div class="center">独断と偏見による性格診断</div>
+     </ons-toolbar>
+    
+     <ons-card>
+      <div class="title" style="text-align: center">
+        <br></br>
+        <br></br>
+        <p>あなたは一匹狼タイプのぼっちです</p>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <ons-button id="push-button-retry">もう一度診断する</ons-button>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+      </div>
+     </ons-card>
+  
+    </ons-page>
+   </ons-template>
+
+ <ons-template id="page5.html">
+
+  <ons-page id="fifth-page">
+     <ons-toolbar>
+        <div class="left">
+          <div class="left"><ons-back-button>戻る</ons-back-button></div>
+         </div>
+       <div class="center">独断と偏見による性格診断</div>
+     </ons-toolbar>
+     <ons-card>
+      <div class="title" style="text-align: center">
+        <br></br>
+        <br></br>
+        <p>あなたは少数人数が落ち着くタイプのコミュ障です</p>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <ons-button id="push-button-retry">もう一度診断する</ons-button>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+      </div>
+     </ons-card>
+    
+    </ons-page>
+   </ons-template>
+
+ <ons-template id="page6.html">
+
+  <ons-page id="sixth-page">
+     <ons-toolbar>
+        <div class="left">
+          <div class="left"><ons-back-button>戻る</ons-back-button></div>
+         </div>
+       <div class="center">独断と偏見による性格診断</div>
+     </ons-toolbar>
+    
+    <div style="text-align: center">
+     <p>Q.どのジャンルが好き？</p><br></br>
+   
+     <p>選択肢A：FPS</p>
+     <p>選択肢B：格ゲー</p>
+     <br></br>
+   
+     <section style="padding: 5px 0 20px">
+       <ons-button id="push-button-a" modifier="outline" style="margin-right: 20px">選択肢A</ons-button>
+       <ons-button id="push-button-b" modifier="outline" style="margin-left: 20px" >選択肢B</ons-button>
+     </section>
+    </div>    
+    
+    </ons-page>
+   </ons-template>
+
+ <ons-template id="page7.html">
+
+  <ons-page id="seventh-page">
+     <ons-toolbar>
+        <div class="left">
+          <div class="left"><ons-back-button>戻る</ons-back-button></div>
+         </div>
+       <div class="center">独断と偏見による性格診断</div>
+     </ons-toolbar>
+    
+    <ons-card>
+      <div class="title" style="text-align: center">
+        <br></br>
+        <br></br>
+        <p>あなたは稀にみるコミュ力オバケです</p>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <ons-button id="push-button-retry">もう一度診断する</ons-button>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+      </div>
+     </ons-card>    
+    
+    </ons-page>
+   </ons-template>
+
+ <ons-template id="page8.html">
+
+  <ons-page id="eighth-page">
+     <ons-toolbar>
+        <div class="left">
+          <div class="left"><ons-back-button>戻る</ons-back-button></div>
+         </div>
+       <div class="center">独断と偏見による性格診断</div>
+     </ons-toolbar>
+    
+    <ons-card>
+      <div class="title" style="text-align: center">
+        <br></br>
+        <br></br>
+        <p>あなたはそこら辺にいる普通の陽キャです</p>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <ons-button id="push-button-retry">もう一度診断する</ons-button>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+      </div>
+     </ons-card>   
+    
+    </ons-page>
+   </ons-template>
+
+</body>
+</html>
